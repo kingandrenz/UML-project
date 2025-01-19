@@ -57,6 +57,7 @@ graph TD
     AssignGrade -- "No" --> CalculateAvg
     CalculateAvg --> DisplayResults["Show class average and student details"]
     DisplayResults --> End["End"]
+```
 
 ## Code Implementation
 The system is implemented in JavaScript and consists of two main files:

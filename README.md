@@ -40,7 +40,24 @@ The system is designed with two main classes:
 The flow of operations in the Student Grading System is represented as a flowchart for better understanding of the process.
 
 **Flowchart Diagram:**
-![Flowchart Diagram](UML-Diagram/flowchart-diagram.png)
+# Flowchart: Student Grading System
+
+```mermaid
+graph TD
+    Start["Start"] --> AddStudent["Add a new student?"]
+    AddStudent -- "Yes" --> EnterStudent["Enter student name and ID"]
+    AddStudent -- "No" --> AssignGrade["Assign grade to a student?"]
+    EnterStudent --> AssignGrade
+    AssignGrade -- "Yes" --> EnterGrade["Enter student ID and grade"]
+    EnterGrade --> StudentFound{"Is student found?"}
+    StudentFound -- "Yes" --> AddGrade["Add grade to the student's record"]
+    StudentFound -- "No" --> Error["Display error: Student not found"]
+    AddGrade --> CalculateAvg["Calculate class average"]
+    Error --> CalculateAvg
+    AssignGrade -- "No" --> CalculateAvg
+    CalculateAvg --> DisplayResults["Show class average and student details"]
+    DisplayResults --> End["End"]
+
 
 ---
 
@@ -64,7 +81,7 @@ The source code is located in the `src` folder. To run the program:
 To provide a visual representation of the program's execution, include screenshots of the console output:
 
 **Execution Output:**
-![Execution Output](screenshots/execution-output.png)
+![Execution Output](execution_image/code_exec.png)
 
 ---
 
